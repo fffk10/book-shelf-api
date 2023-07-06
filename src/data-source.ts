@@ -1,4 +1,5 @@
-import { Comment } from './entity/comment.entity'
+import { Comment } from '@/src/entity/comment.entity'
+import { Book } from '@/src/entity/books.entity'
 import { DataSource } from 'typeorm'
 
 export const AppDataSource = new DataSource({
@@ -10,7 +11,7 @@ export const AppDataSource = new DataSource({
   database: 'application', // TODO 仮置き
   logging: true,
   synchronize: false,
-  entities: [Comment],
+  entities: [Comment, Book],
   migrations: ['dist/migration/*.js'],
 })
 
